@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="cabecera">
         <div class="logo">
           <a href="index.html">
@@ -31,7 +31,8 @@
               src="imagenes/logo_vandal.png"
               alt="Logo Vandal"
               class="logo-img"
-          /></a>
+            />
+          </a>
         </div>
         <nav>
           <ul>
@@ -73,10 +74,7 @@
               llena de acción y mitología nórdica.
             </p>
             <br />
-            <img
-              src="imagenes/god_of_war.png"
-              alt="Juego 11"
-            />
+            <img src="imagenes/god_of_war.png" alt="Juego 11" />
           </div>
         </div>
       </section>
@@ -85,10 +83,7 @@
         <h2>Reseñas Recientes</h2>
         <div class="resenias">
           <div class="resenia" data-aos="fade-up" data-aos-delay="100">
-            <img
-              src="imagenes/the-last-of-us.jpg"
-              alt="The Last of Us"
-            />
+            <img src="imagenes/the-last-of-us.jpg" alt="The Last of Us" />
             <h3>The Last of Us Part II</h3>
             <p>
               Una obra maestra de la narrativa y el diseño de videojuegos.
@@ -97,10 +92,7 @@
           </div>
 
           <div class="resenia" data-aos="fade-up" data-aos-delay="300">
-            <img
-              src="imagenes/ghost_of_tsushima.jpg"
-              alt="Ghost of Tsushima"
-            />
+            <img src="imagenes/ghost_of_tsushima.jpg" alt="Ghost of Tsushima" />
             <h3>Ghost of Tsushima</h3>
             <p>
               Explora un Japón feudal hermosamente renderizado y domina el arte
@@ -219,6 +211,28 @@
         easing: "ease-in-out",
         once: true,
       });
+    </script>
+    <script>
+      let lastScrollTop = 0;
+      const header = document.getElementById("header");
+
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          header.classList.add("hide-header");
+        } else {
+          header.classList.remove("hide-header");
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+
+      if (window.innerWidth <= 768) {
+        AOS.init({ duration: 800 });
+      } else {
+        AOS.init({ duration: 1200 });
+      }
     </script>
   </body>
 </html>

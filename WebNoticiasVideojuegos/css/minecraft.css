@@ -58,7 +58,8 @@ nav ul li a {
   cursor: url("../imagenes/puntero_pulsable.webp"), pointer;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:active {
   color: #f5b921;
 }
 
@@ -114,7 +115,8 @@ nav ul li a:hover {
   cursor: url("../imagenes/puntero_pulsable.webp"), pointer;
 }
 
-.galeria img:hover {
+.galeria img:hover,
+.galeria img:active {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
@@ -141,12 +143,14 @@ nav ul li a:hover {
   transition: color 0.3s ease;
 }
 
-.boton-jugar:hover {
+.boton-jugar:hover,
+.boton-jugar:active {
   background-color: #44cc00;
   transform: scale(1.05);
 }
 
-.boton-jugar:hover a {
+.boton-jugar:hover a,
+.boton-jugar:active a {
   color: #66ff00;
 }
 
@@ -156,5 +160,96 @@ nav ul li a:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Responsividad */
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  .videojuego-main {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .videojuego-main h2 {
+    font-size: 30px;
+  }
+
+  .videojuego-main p {
+    font-size: 16px;
+  }
+
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .galeria img {
+    max-width: 250px;
+  }
+
+  .boton-jugar {
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 15px;
+    width: 95%;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .videojuego-main {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .videojuego-main h2 {
+    font-size: 24px;
+  }
+
+  .videojuego-main p {
+    font-size: 14px;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .galeria img {
+    max-width: 200px;
+  }
+
+  .boton-jugar {
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }

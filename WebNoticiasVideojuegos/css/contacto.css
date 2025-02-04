@@ -1,14 +1,22 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #1b2a41;
+  background-color: #0a1f44;
   color: #ecf0f1;
   margin: 0;
   padding: 0;
   font-size: 18px;
 }
 
+#header {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hide-header {
+  transform: translateY(-100%);
+}
+
 header {
-  background-color: #34495e;
+  background-color: #1b2a41;
   padding: 20px;
 }
 
@@ -41,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #f5b921;
+  color: #f5a623;
 }
 
 main {
@@ -90,13 +98,13 @@ main {
 
 .contacto-main input:focus,
 .contacto-main textarea:focus {
-  border: 1px solid #f5b921;
+  border: 1px solid #f5a623;
   outline: none;
 }
 
 .contacto-main button {
   padding: 15px;
-  background-color: #f5b921;
+  background-color: #f5a623;
   color: #fff;
   font-weight: 600;
   border: none;
@@ -107,12 +115,13 @@ main {
   font-size: 18px;
 }
 
-.contacto-main button:hover {
+.contacto-main button:hover,
+.contacto-main button:active {
   background-color: #f39c12;
 }
 
 footer {
-  background-color: #34495e;
+  background-color: #1b2a41;
   padding: 10px;
   text-align: center;
 }
@@ -120,4 +129,71 @@ footer {
 footer p {
   margin: 0;
   color: #ecf0f1;
+}
+
+@media (max-width: 768px) {
+  .cabecera {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .contacto-main {
+    padding: 30px;
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+  .contacto-main h2 {
+    font-size: 28px;
+  }
+
+  .contacto-main input,
+  .contacto-main textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .contacto-main button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .logo-img {
+    width: 100px;
+  }
+
+  nav ul {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .contacto-main {
+    width: 100%;
+  }
+
+  .contacto-main h2 {
+    font-size: 24px;
+  }
+
+  .contacto-main input,
+  .contacto-main textarea {
+    font-size: 14px;
+  }
+
+  .contacto-main button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

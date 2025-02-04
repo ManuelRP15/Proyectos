@@ -1,3 +1,4 @@
+<!-- contacto.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -13,7 +14,7 @@
     />
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="cabecera">
         <div class="logo">
           <a href="../index.html">
@@ -55,6 +56,22 @@
         duration: 1200,
         easing: "ease-in-out",
         once: true,
+      });
+    </script>
+    <script>
+      let lastScrollTop = 0;
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          header.classList.add("hide-header");
+        } else {
+          header.classList.remove("hide-header");
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       });
     </script>
   </body>

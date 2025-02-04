@@ -1,9 +1,18 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #0a1f44;
   color: #ecf0f1;
+  box-sizing: border-box;
+}
+
+#header {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hide-header {
+  transform: translateY(-100%);
 }
 
 header {
@@ -16,6 +25,7 @@ header {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 header h1 {
@@ -45,7 +55,8 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:active {
   color: #f5a623;
 }
 
@@ -56,6 +67,7 @@ nav ul li a:hover {
   background: #1b2a41;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 .noticias {
@@ -70,10 +82,12 @@ nav ul li a:hover {
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 8px;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.noticias li:hover {
+.noticias li:hover,
+.noticias li:active {
   background: #1e3c57;
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -104,7 +118,8 @@ nav ul li a:hover {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
-.resenia:hover {
+.resenia:hover,
+.resenia:active {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   background-color: #1e3c57;
@@ -139,7 +154,8 @@ nav ul li a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.lanzamiento:hover {
+.lanzamiento:hover,
+.lanzamiento:active {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   background-color: #1e3c57;
@@ -173,7 +189,8 @@ nav ul li a:hover {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
-.articulo:hover {
+.articulo:hover,
+.articulo:active {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   background-color: #1e3c57;
@@ -218,7 +235,84 @@ section .container {
 }
 
 @media (max-width: 768px) {
-  .lanzamientos, .resenias, .articulos {
+  header {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .lanzamientos,
+  .resenias,
+  .articulos {
     grid-template-columns: 1fr;
+  }
+
+  .lanzamiento,
+  .resenia,
+  .articulo {
+    padding: 15px;
+  }
+
+  .lanzamiento img,
+  .resenia img {
+    height: 150px;
+  }
+
+  .lanzamiento h3,
+  .resenia h3,
+  .articulo h3 {
+    font-size: 18px;
+  }
+
+  .noticias li {
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+  }
+
+  .lanzamiento img,
+  .resenia img {
+    height: 130px;
+  }
+
+  .lanzamiento h3,
+  .resenia h3,
+  .articulo h3 {
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 10px;
   }
 }

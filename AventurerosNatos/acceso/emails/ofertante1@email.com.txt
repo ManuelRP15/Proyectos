@@ -1,0 +1,3 @@
+Restablecimiento de contraseña
+
+Haz clic en el siguiente enlace para restablecer tu contraseña: http://localhost:3000/acceso/restablecer.php?token=1105297e228f56093ad9b71a5df38399

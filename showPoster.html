@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Poster Viewer</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            text-align: center;
+            background: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2b579a;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 15px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 14px;
+            background: #2b579a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        a:hover {
+            background: #1e3e73;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="movieTitle">Movie Poster</h2>
+    <img id="poster" alt="No image available" />
+    <br />
+    <a id="openNew" target="_blank">Open Full Image</a>
+
+    <script>
+        try {
+            // Lee parámetros desde la URL (vienen codificados desde Dynamics)
+            const params = new URLSearchParams(window.location.search.replace("?data=", ""));
+            const img = decodeURIComponent(params.get("img") || "");
+            const title = decodeURIComponent(params.get("title") || "Movie Poster");
+
+            // Inserta los valores en la página
+            document.getElementById("movieTitle").textContent = title;
+            const poster = document.getElementById("poster");
+            const link = document.getElementById("openNew");
+
+            // Muestra imagen o icono por defecto
+            if (img && img.startsWith("http")) {
+                poster.src = img;
+                link.href = img;
+            } else {
+                poster.src = "/_imgs/ico_18_1003.gif";
+                link.style.display = "none";
+            }
+        } catch (e) {
+            document.body.innerHTML += `<p style="color:red">Error: ${e.message}</p>`;
+        }
+    </script>
+</body>
+
+</html>
